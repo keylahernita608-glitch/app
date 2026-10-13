@@ -1,0 +1,77 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter debug_adapter
+
+## exception
+
+RPCError: readyToResume: (-32603) Unexpected DWDS error for resume: WipError -32000 Cannot find context with specified id
+
+```
+#0      new _OutstandingRequest (package:vm_service/src/vm_service.dart:268:34)
+#1      VmService._call.<anonymous closure> (package:vm_service/src/vm_service.dart:1950:25)
+#2      VmService._call (package:vm_service/src/vm_service.dart:1962:8)
+#3      VmService.callServiceExtension (package:vm_service/src/vm_service.dart:1901:14)
+#4      VmService.callMethod (package:vm_service/src/vm_service.dart:1884:12)
+#5      DdsExtension._callHelper (package:dds_service_extensions/dds_service_extensions.dart:369:12)
+#6      DdsExtension.readyToResume (package:dds_service_extensions/dds_service_extensions.dart:327:12)
+<asynchronous suspension>
+#7      IsolateManager._readyToResume (package:dds/src/dap/isolate_manager.dart:425:7)
+<asynchronous suspension>
+#8      IsolateManager.readyToResumeThread (package:dds/src/dap/isolate_manager.dart:306:5)
+<asynchronous suspension>
+#9      IsolateManager._handlePause (package:dds/src/dap/isolate_manager.dart:695:7)
+<asynchronous suspension>
+#10     IsolateManager.handleEvent (package:dds/src/dap/isolate_manager.dart:207:7)
+<asynchronous suspension>
+#11     DartDebugAdapter.handleDebugEvent (package:dds/src/dap/adapters/dart.dart:2529:5)
+<asynchronous suspension>
+#12     DartDebugAdapter._withErrorHandling (package:dds/src/dap/adapters/dart.dart:2896:14)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 3.44.8, on Microsoft Windows [Version 10.0.22631.5335], locale en-US) [9.5s]
+    • Flutter version 3.44.8 on channel stable at c:\development\flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision 058e0af2c2 (3 months ago), 2026-07-23 10:56:21 -0700
+    • Engine revision 0cd610717b
+    • Dart version 3.12.2
+    • DevTools version 2.57.0
+    • Feature flags: enable-web, enable-linux-desktop, enable-macos-desktop, enable-windows-desktop, enable-android, enable-ios, cli-animations, enable-native-assets, enable-swift-package-manager, omit-legacy-version-file, enable-lldb-debugging, enable-uiscene-migration
+
+[✓] Windows Version (11 Pro 64-bit, 23H2, 2009) [12.4s]
+
+[!] Android toolchain - develop for Android devices (Android SDK version 36.0.0) [12.7s]
+    • Android SDK at C:\android
+    • Emulator version unknown
+    • Platform android-36, build-tools 36.0.0
+    • ANDROID_SDK_ROOT = C:\android
+    • Java binary at: C:\Program Files\Eclipse Adoptium\jdk-25.0.4.7-hotspot\bin\java
+      This JDK is specified by the JAVA_HOME environment variable.
+      To manually set the JDK path, use: `flutter config --jdk-dir="path/to/jdk"`.
+    • Java version OpenJDK Runtime Environment Temurin-25.0.4+7 (build 25.0.4+7-LTS)
+    ! Some Android licenses not accepted. To resolve this, run: flutter doctor --android-licenses
+
+[✓] Chrome - develop for the web [3.5s]
+    • Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[✓] Visual Studio - develop Windows apps (Visual Studio Professional 2022 17.14.36) [3.5s]
+    • Visual Studio at C:\Program Files\Microsoft Visual Studio\2022\Professional
+    • Visual Studio Professional 2022 version 17.14.37502.11
+    • Windows 10 SDK version 10.0.26100.0
+
+[✓] Connected device (3 available) [2.9s]
+    • Windows (desktop) • windows • windows-x64    • Microsoft Windows [Version 10.0.22631.5335]
+    • Chrome (web)      • chrome  • web-javascript • Google Chrome 154.0.8037.98
+    • Edge (web)        • edge    • web-javascript • Microsoft Edge 154.0.4258.62
+
+[✓] Network resources [3.0s]
+    • All expected network resources are available.
+
+! Doctor found issues in 1 category.
+```
